@@ -1,3 +1,32 @@
+/*
+laptop settings
+Copyright (C) 2021  Ashok Pappu
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Gnomovision version 69, Copyright (C) year Ashok Pappu
+Gnomovision comes with ABSOLUTELY NO WARRANTY; for details
+type `show w'.  This is free software, and you are welcome
+to redistribute it under certain conditions; type `show c'
+for details.
+
+
+
+
+*/
+
 package main
 
 import (
@@ -17,7 +46,6 @@ func main() {
 	var signals = map[string]interface{}{
 		"on_savebtn_clicked":  onSaveClicked,
 		"closebtn_clicked_cb": closetClicked,
-
 	}
 
 	builder.ConnectSignals(signals)
@@ -25,13 +53,11 @@ func main() {
 	obj, err := builder.GetObject("window")
 	win := obj.(*gtk.Window)
 
-
-
 	//// Create a new toplevel window, set its title, and connect it to the
 	//// "destroy" signal to exit the GTK main loop when it is destroyed.
 	//win, err := gtk.WindowNew(gtk.WINDOW_TOPLEVEL)
 	if err != nil {
-   	log.Fatal("Unable to create window:", err)
+		log.Fatal("Unable to create window:", err)
 	}
 	win.SetTitle("Simple Example")
 	win.Connect("destroy", func() {
@@ -59,12 +85,11 @@ func main() {
 	gtk.Main()
 }
 
-func onSaveClicked(){
+func onSaveClicked() {
 	fmt.Println("save clicked")
 }
 
-
-func closetClicked(){
+func closetClicked() {
 	fmt.Println(" close clicked")
 	gtk.MainQuit()
 }
